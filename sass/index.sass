@@ -1,0 +1,285 @@
+$main-color-darker: #2C3333
+$main-color-dark: #2E4F4F
+$main-color: #0E8388
+$main-color-light: #CBE4DE
+
+$screen-xs-min: 460px
+$screen-sm-min: 640px
+$screen-md-min: 768px
+$screen-lg-min: 1024px
+$screen-xl-min: 1280px
+$screen-xxl-min: 1537px
+
+
+@mixin xs
+  @media (min-width: #{$screen-xs-min}) 
+    @content
+
+@mixin sm 
+  @media (min-width: #{$screen-sm-min}) 
+    @content
+
+@mixin md
+  @media (min-width: #{$screen-md-min}) 
+    @content
+
+@mixin lg
+  @media (min-width: #{$screen-lg-min}) 
+    @content
+
+@mixin xl
+  @media (min-width: #{$screen-xl-min}) 
+    @content
+
+@mixin xxl
+  @media (min-width: #{$screen-xxl-min}) 
+    @content
+
+body,
+* 
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  // font-family: "Space Grotesk", sans-serif
+  // font-family: "Josefin Slab", serif
+  font-family:  "Kode Mono", monospace
+body 
+  height: 100vh
+  width: 100vw
+
+a 
+  text-decoration: none
+  color: currentcolor
+
+.container
+  margin: 0 auto
+  @include xs
+    max-width: $screen-xs-min
+  @include sm
+    max-width: $screen-sm-min
+  @include md
+    max-width: $screen-md-min
+  @include lg
+    max-width: $screen-lg-min
+  @include xl
+    max-width: $screen-xl-min
+  @include xxl
+    max-width: $screen-xxl-min
+
+main
+  background: $main-color-darker
+
+.main-view 
+  padding: 1rem
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  &::-webkit-scrollbar
+    width: 5px
+    background: $main-color
+  &::-webkit-scrollbar-thumb
+    background-color: $main-color-light
+    border-radius: 1rem 
+  @include lg
+    height: 100vh
+    display: grid
+    grid-template-columns: repeat(11, minmax(0, 1fr))
+    align-items: center
+
+.left-content 
+  perspective: 32rem
+  height: 750px
+  grid-column: span 4/ span 4
+  @include sm
+    height: 850px
+  @include sm
+    height: 1000px
+  @include lg
+    height: 750px
+  .content
+    background: $main-color-light
+    height: 100%
+    width: 100%
+    border-radius: 2rem
+    transform-style: preserve-3d
+    display: flex
+    flex-direction: column
+    box-shadow: 10px 10px 18px 0px $main-color
+    -webkit-box-shadow: 10px 10px 18px 0px $main-color
+    -moz-box-shadow: 10px 10px 18px 0px $main-color
+    @include lg
+      transform: rotateY(5deg) translateX(15px)
+    .avatar
+      background: url(../assets/avatar.png) bottom no-repeat
+      background-size: cover
+      height: 75%
+    .info
+      color: $main-color
+      text-align: center
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      flex: 1
+      .top
+        .name
+          font-weight: bold
+        .position
+          font-weight: lighter
+          font-size: 1.3rem
+        .contact-list
+          font-size: 2.5rem
+      .bottom
+        display: grid
+        grid-template-columns: repeat(1, minmax(0,1fr))
+        @include sm
+          grid-template-columns: repeat(2, minmax(0,1fr))
+        @include lg
+          grid-template-columns: repeat(1, minmax(0,1fr))
+        @include xl
+          grid-template-columns: repeat(2, minmax(0,1fr))
+        font-size: 1.7rem
+        div
+          border: 1px solid
+          padding: 1rem 0
+          transition: background 0.5s
+          &:hover
+            border: none
+            background: $main-color
+            color: $main-color-light
+            cursor: pointer
+        div:last-child
+          border-end-end-radius: 2rem
+          border-end-start-radius: 2rem
+        @include sm
+          div:first-child
+            border-end-start-radius: 2rem
+          div:last-child
+            border-end-start-radius: 0
+        @include lg
+          div:first-child
+            border-end-start-radius: 0
+          div:last-child
+            border-end-start-radius: 2rem
+        @include xl
+          div:first-child
+            border-end-start-radius: 2rem
+          div:last-child
+            border-end-start-radius: 0
+          font-size: 1.3rem
+        @include xxl
+          font-size: 1.6rem
+
+.right-content 
+  z-index: 10
+  position: relative
+  background: $main-color-dark
+  color: $main-color-light
+  border-radius: 2rem
+  grid-column: span 6/ span 6
+  overflow: hidden
+  box-shadow: 10px 10px 18px 0px $main-color
+  -webkit-box-shadow: 10px 10px 18px 0px $main-color
+  -moz-box-shadow: 10px 10px 18px 0px $main-color
+  @include lg 
+    height: 720px
+  section
+    overflow-x: height 
+    overflow-y: scroll
+    height: 100%
+    @include lg 
+      &::-webkit-scrollbar
+        width: 5px
+        background: $main-color
+      &::-webkit-scrollbar-thumb
+        background-color: $main-color-light
+        border-radius: 1rem 
+    .view
+      padding: 1rem 1.5rem
+      .about
+        gap: 2rem
+        display: grid
+        grid-template-columns: repeat(1, minmax(0,1fr))
+        @include md
+          grid-template-columns: repeat(2, minmax(0,1fr))
+        .summary
+          p
+            text-align: justify
+            line-height: 1.5rem
+        .skills
+          display: flex
+          flex-direction: column
+          gap: 0.5rem
+          div
+            display: flex
+            justify-content: space-between
+            text-align: end
+            .title
+              font-weight: bold
+              background: $main-color
+              height: fit-content
+              color: $main-color-light
+              padding: 0.25rem 0.5rem
+              border-radius: 1rem
+          img
+            height: 25px*6
+      .experiences
+        .company-name
+          display: flex
+          justify-items: center
+          gap: 1rem
+          // margin-left: 1rem
+          @include md
+            margin-left: 4rem
+          a 
+            height: auto
+            display: flex
+            flex-direction: column
+            justify-content: center
+          img
+            height: 35px
+            width: 35px
+          h3.name
+            background-color: $main-color
+            border-radius: 1rem
+            padding: 0.25rem 0.5rem
+            width: fit-content
+            &:hover
+              color: $main-color
+              background: $main-color-light
+        .company
+          padding: 0.5rem 0
+        .company,.list-project,.project-info
+          display: flex
+          flex-direction: column
+          gap: 0.3rem
+        .list-project 
+          .project-info
+            border-bottom: 2px solid
+            padding: 0.5rem 0
+            .name
+              font-size: 1.5rem
+              margin-left: 1rem
+              font-size: 1.35rem
+              display: list-item
+              @include lg
+                margin-left: 4rem
+              a
+                border-radius: 4rem
+                padding: 0.25rem 0.5rem
+                &:hover
+                  color: $main-color
+                  background: $main-color-light
+        .position,.projects,.list-project .project-info div
+          display: grid
+            grid-template-columns: repeat(1, minmax(0,1fr))
+          .title
+            font-weight: bold
+          span:nth-child(2)
+            padding-left: 1rem
+            @include lg
+              grid-column: span 3/ span 3
+          
+          ul
+            padding-left: 2rem
+            @include xxl
+              grid-column: span 3/ span 3
