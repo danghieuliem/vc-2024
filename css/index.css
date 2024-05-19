@@ -115,7 +115,7 @@ main {
   }
 }
 .left-content .content .avatar {
-  background: url(../assets/avatar.png) bottom no-repeat;
+  background: url(../assets/avatar.webp) bottom no-repeat;
   background-size: cover;
   height: 75%;
 }
