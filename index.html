@@ -27,7 +27,21 @@
       <div class="main-view">
         <div class="left-content">
           <div class="content">
-            <div class="avatar"></div>
+            <div class="top-content">
+              <div class="avatar"></div>
+              <div class="top">
+                <h1 class="name">Dang Hieu Liem</h1>
+                <h2 class="position">Full-stack developer</h2>
+                <div class="contact-list">
+                  <a target="_blank" href="https://www.linkedin.com/in/danghieuliem/"><i
+                      class="fa-brands fa-linkedin"></i></a>
+                  <a target="_blank" href="https://github.com/danghieuliem/"><i
+                      class="fa-brands fa-square-github"></i></a>
+                  <a target="_blank" href="tel:84382210219"><i class="fa-solid fa-square-phone"></i></a>
+                  <a target="_blank" href="mailto:hieuliem33@gmai.com"><i class="fa-solid fa-square-envelope"></i></a>
+                </div>
+              </div>
+            </div>
             <div class="info">
               <div class="top">
                 <h1 class="name">Dang Hieu Liem</h1>
@@ -45,20 +59,18 @@
                 <div class="button download-vc" id="btn-download-cv">
                   <i class="fa-solid fa-file-arrow-down"></i> <span>Download my CV</span>
                 </div>
-                <a target="_blank" href="tel:84382210219">
-                  <div class="button phone" href="mailto:hieuliem33@gmai.com">
-                    <i class="fa-solid fa-square-phone"></i> <span>Contact me</span>
-                  </div>
+                <a class="button phone" href="mailto:hieuliem33@gmai.com">
+                  <i class="fa-solid fa-square-phone"></i> <span>Contact me</span>
                 </a>
               </div>
             </div>
           </div>
         </div>
         <div class="right-content">
-          <section class="about">
+          <div class="scoll-view">
             <div class="view">
-              <h2>About me</h2>
-              <div class="about">
+              <h2 class="title-section">About me</h2>
+              <section class="about">
                 <div class="summary">
                   <p>
                     I have 3 years of experience in developing Front-end applications with Reactjs.
@@ -83,9 +95,10 @@
                     </span>
                   </div>
                 </div>
-              </div>
-              <h2>Experiences</h2>
-              <div class="experiences">
+              </section>
+
+              <h2 class="title-section">Experiences</h2>
+              <section class="experiences">
                 <div class="company">
                   <div class="company-name">
                     <a href="http://mona.software"><img src="./assets/mona-icon.png" alt="mona media"></a>
@@ -99,142 +112,144 @@
                   <p class="position">
                     <b>Position:</b><span>Front-end developer</span>
                   </p>
-                  <p class="projects">
-                    <b>Projects:</b>
-                  </p>
-                  <div class="list-project">
-                    <div class="project-info">
-                      <b class="name">Web app CGB</b>
-                      <div>
-                        <span class="title">Description:</span> <span>A product for managing container yards.</span>
+
+                  <details>
+                    <summary class="projects">
+                      Projects: ...
+                    </summary>
+                    <div class="list-project">
+                      <div class="project-info">
+                        <b class="name">Web app CGB</b>
+                        <div>
+                          <span class="title">Description:</span> <span>A product for managing container yards.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>2</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span> <span>Front-end developer</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Work with customers on new feature requests.</li>
+                            <li>Join to design a database.</li>
+                            <li>Take the main responsibility for the front-end.</li>
+                            <li>Set-up base code for Front-end with ESlint, Prettier, Husky.</li>
+                            <li>Create components for custom MUI with React-hook-from.</li>
+                            <li>Implement and maintain UI.</li>
+                            <li>Work with the Back-end department to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <span>Nextjs, TypeScript, Tailwind, Material UI,
+                            React-hook-from, Apollo-client, Graphql, Redux.
+                          </span>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>11/2023 - current.</span>
+                        </div>
                       </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>2</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span> <span>Front-end developer</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Work with customers on new feature requests.</li>
-                          <li>Join to design a database.</li>
-                          <li>Take the main responsibility for the front-end.</li>
-                          <li>Set-up base code for Front-end with ESlint, Prettier, Husky.</li>
-                          <li>Create components for custom MUI with React-hook-from.</li>
-                          <li>Implement and maintain UI.</li>
-                          <li>Work with the Back-end department to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <span>Nextjs, TypeScript, Tailwind, Material UI,
-                          React-hook-from, Apollo-client, Graphql, Redux.
-                        </span>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>11/2023 - current.</span>
-                      </div>
-                    </div>
-                    <div class="project-info">
-                      <b class="name">Web app "Nhập hàng Trung Quốc"
+                      <div class="project-info">
                         <a target="_blank" href="https://nhaphang.monamedia.net/">
-                          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          <b class="name name-link">Web app "Nhập hàng Trung Quốc"
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          </b>
                         </a>
-                      </b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>A product for managing client orders on Chinese e-commerce.</span>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>A product for managing client orders on Chinese e-commerce.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>5.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span> <span>Front-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Work with customers on new feature requests.</li>
+                            <li>Update and modify the user interface as required by the customer.</li>
+                            <li>Maintenance and updates according to trends.</li>
+                            <li>Work with the Back-end department to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <span>Reactjs, TypeScript, Tailwind, Ant design, React-hook-from.
+                          </span>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>08/2023 - current.</span>
+                        </div>
                       </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>5.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span> <span>Front-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Work with customers on new feature requests.</li>
-                          <li>Update and modify the user interface as required by the customer.</li>
-                          <li>Maintenance and updates according to trends.</li>
-                          <li>Work with the Back-end department to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <span>Reactjs, TypeScript, Tailwind, Ant design, React-hook-from.
-                        </span>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>08/2023 - current.</span>
-                      </div>
-                    </div>
-                    <div class="project-info">
-                      <b class="name">Browser extensions "Nhập hàng Trung Quốc"
-                        <a target="_blank"
+                      <div class="project-info"> <a target="_blank"
                           href="https://chromewebstore.google.com/detail/c%C3%B4ng-c%E1%BB%A5-%C4%91%E1%BA%B7t-h%C3%A0ng-trung-qu/lnfepkblakpkinhoiiflccgaaebgnkci">
-                          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          <b class="name name-link">Browser extensions "Nhập hàng Trung Quốc"
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          </b>
                         </a>
-                      </b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>
-                          A extension on browser for create orders on Chinese e-commerce.
-                        </span>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>
+                            A extension on browser for create orders on Chinese e-commerce.
+                          </span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>2.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span> <span>Front-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Work with customers on new feature requests.</li>
+                            <li>Update and modify the user interface as required by the customer.</li>
+                            <li>Maintenance and updates according to trends.</li>
+                            <li>Work with the Back-end department to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <span>HTML, CSS, JavaScript, Jquery.
+                          </span>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>08/2023 - current.</span>
+                        </div>
                       </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>2.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span> <span>Front-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Work with customers on new feature requests.</li>
-                          <li>Update and modify the user interface as required by the customer.</li>
-                          <li>Maintenance and updates according to trends.</li>
-                          <li>Work with the Back-end department to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <span>HTML, CSS, JavaScript, Jquery.
-                        </span>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>08/2023 - current.</span>
+                      <div class="project-info">
+                        <b class="name">Others</b>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>Implement templates from design to HTML, SCC, JavaScript.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>1.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span> <span>Front-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Implement template from design to HTML, SCC, JavaScript.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <span>HTML, SCC, JavaScript, SASS, Tailwind.
+                          </span>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>08/2023 - current.</span>
+                        </div>
                       </div>
                     </div>
-                    <div class="project-info">
-                      <b class="name">Others</b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>Implement templates from design to HTML, SCC, JavaScript.</span>
-                      </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>1.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span> <span>Front-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Implement template from design to HTML, SCC, JavaScript.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <span>HTML, SCC, JavaScript, SASS, Tailwind.
-                        </span>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>08/2023 - current.</span>
-                      </div>
-                    </div>
-                  </div>
+                  </details>
                 </div>
                 <div class="company">
                   <div class="company-name">
@@ -248,148 +263,151 @@
                   <p class="position">
                     <b>Position:</b><span>Full-stack developer</span>
                   </p>
-                  <p class="projects">
-                    <b>Projects:</b>
-                  </p>
-                  <div class="list-project">
-                    <div class="project-info">
-                      <b class="name">Troodon website.
+                  <details>
+                    <summary class="projects">
+                      Projects: ...
+                    </summary>
+                    <div class="list-project">
+                      <div class="project-info">
                         <a target="_blank" href="https://troodonlabs.com/">
-                          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          <b class="name name-link">Troodon website.
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          </b>
                         </a>
-                      </b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>A company business website for TroodonLabs company.</span>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>A company business website for TroodonLabs company.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>4.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span>
+                          <span>Team leader, front-end developer, and back-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Implement and maintain UI from the design for a client website,
+                              an admin website, and a back-end.</li>
+                            <li>Participate in database design and implementation of the database into the back end.
+                            </li>
+                            <li>Set up source code for the client, admin, and back-end.</li>
+                            <li>Check the team's progress weekly.</li>
+                            <li>Update and modify the user interface as required by the customer.</li>
+                            <li>Work with my team to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <ul>
+                            <li>Client site: React js, Next js, Tailwind CSS, TypeScript, Redux.</li>
+                            <li>Admin site: Ant Design, Ant Pro, TypeScript.</li>
+                            <li>Back-end: Nodejs, Feathersjs, TypeScript, AWS s3, MySQL, CRUD.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>4 months.</span>
+                        </div>
                       </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>4.</span>
+                      <div class="project-info">
+                        <b class="name">Skale website (outsource).</b>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>A web app to evaluate the internals of the company.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>4.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span>
+                          <span>Front-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Implement and maintain UI from the design.</li>
+                            <li>Weekly progress report to team leader.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <span>Reactjs, Tailwind CSS, TypeScript, Material UI, Redux.</span>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>2 months.</span>
+                        </div>
                       </div>
-                      <div>
-                        <span class="title">My position:</span>
-                        <span>Team leader, front-end developer, and back-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Implement and maintain UI from the design for a client website,
-                            an admin website, and a back-end.</li>
-                          <li>Participate in database design and implementation of the database into the back end.</li>
-                          <li>Set up source code for the client, admin, and back-end.</li>
-                          <li>Check the team's progress weekly.</li>
-                          <li>Update and modify the user interface as required by the customer.</li>
-                          <li>Work with my team to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <ul>
-                          <li>Client site: React js, Next js, Tailwind CSS, TypeScript, Redux.</li>
-                          <li>Admin site: Ant Design, Ant Pro, TypeScript.</li>
-                          <li>Back-end: Nodejs, Feathersjs, TypeScript, AWS s3, MySQL, CRUD.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>4 months.</span>
-                      </div>
-                    </div>
-                    <div class="project-info">
-                      <b class="name">Skale website (outsource).</b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>A web app to evaluate the internals of the company.</span>
-                      </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>4.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span>
-                        <span>Front-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Implement and maintain UI from the design.</li>
-                          <li>Weekly progress report to team leader.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <span>Reactjs, Tailwind CSS, TypeScript, Material UI, Redux.</span>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>2 months.</span>
-                      </div>
-                    </div>
-                    <div class="project-info">
-                      <b class="name">Nutizen.
+                      <div class="project-info">
                         <a target="_blank" href="https://nutizen.com.vn">
-                          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          <b class="name name-link">Nutizen.
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                          </b>
                         </a>
-                      </b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>A company business website for Nutifood.</span>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>A company business website for Nutifood.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>4.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span>
+                          <span>Front-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Implement and maintain UI from the design
+                              for the client website and admin website.</li>
+                            <li>Weekly progress report to team leader.</li>
+                            <li>Update and modify the user interface as required by the customer.</li>
+                            <li>Work with the back-end department to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <ul>
+                            <li>Client site: Reactjs, Tailwind CSS, TypeScript, Redux, Material UI.</li>
+                            <li>Admin site: Reactjs, TypeScript, Material UI.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>4 months.</span>
+                        </div>
                       </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>4.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span>
-                        <span>Front-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Implement and maintain UI from the design
-                            for the client website and admin website.</li>
-                          <li>Weekly progress report to team leader.</li>
-                          <li>Update and modify the user interface as required by the customer.</li>
-                          <li>Work with the back-end department to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <ul>
-                          <li>Client site: Reactjs, Tailwind CSS, TypeScript, Redux, Material UI.</li>
-                          <li>Admin site: Reactjs, TypeScript, Material UI.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>4 months.</span>
+                      <div class="project-info">
+                        <b class="name">ARBO (outsource).</b>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>An application used to manage work exclusively for the design team.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>20.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span>
+                          <span>Front-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Coding, implementing future UI front-end for the web app, and fixing bugs.</li>
+                            <li>Weekly progress report to team leader.</li>
+                            <li>Update and modify the user interface according to customer requirements.</li>
+                            <li>Work with the back-end department to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <span>Vuejs, Tailwind CSS, TypeScript, Element UI, CKEditor, Redux.</span>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>18 months.</span>
+                        </div>
                       </div>
                     </div>
-                    <div class="project-info">
-                      <b class="name">ARBO (outsource).</b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>An application used to manage work exclusively for the design team.</span>
-                      </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>20.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span>
-                        <span>Front-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Coding, implementing future UI front-end for the web app, and fixing bugs.</li>
-                          <li>Weekly progress report to team leader.</li>
-                          <li>Update and modify the user interface according to customer requirements.</li>
-                          <li>Work with the back-end department to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <span>Vuejs, Tailwind CSS, TypeScript, Element UI, CKEditor, Redux.</span>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>18 months.</span>
-                      </div>
-                    </div>
-                  </div>
+                  </details>
                 </div>
                 <div class="company">
                   <div class="company-name">
@@ -403,47 +421,50 @@
                   <p class="position">
                     <b>Position:</b><span>Back-end developer</span>
                   </p>
-                  <p class="projects">
-                    <b>Projects:</b>
-                  </p>
-                  <div class="list-project">
-                    <div class="project-info">
-                      <b class="name">Kathena.</b>
-                      <div>
-                        <span class="title">Description:</span>
-                        <span>A web app teaching and learning online.</span>
-                      </div>
-                      <div>
-                        <span class="title">Team size:</span> <span>5.</span>
-                      </div>
-                      <div>
-                        <span class="title">My position:</span>
-                        <span>Back-end developer.</span>
-                      </div>
-                      <div>
-                        <span class="title">My responsibilities:</span>
-                        <ul>
-                          <li>Implement and maintain API.</li>
-                          <li>Customer needs analysis and database design.</li>
-                          <li>Write unit tests for each feature.</li>
-                          <li>Work with the front-end department to unify the APIs.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Technical used:</span>
-                        <ul>
-                          <li>Nodejs, Nextjs, GraphQL, TypeScript, CROD, MongoDB, Jest.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <span class="title">Participation time:</span> <span>8 months.</span>
+
+                  <details>
+                    <summary class="projects">
+                      Projects: ...
+                    </summary>
+                    <div class="list-project">
+                      <div class="project-info">
+                        <b class="name">Kathena.</b>
+                        <div>
+                          <span class="title">Description:</span>
+                          <span>A web app teaching and learning online.</span>
+                        </div>
+                        <div>
+                          <span class="title">Team size:</span> <span>5.</span>
+                        </div>
+                        <div>
+                          <span class="title">My position:</span>
+                          <span>Back-end developer.</span>
+                        </div>
+                        <div>
+                          <span class="title">My responsibilities:</span>
+                          <ul>
+                            <li>Implement and maintain API.</li>
+                            <li>Customer needs analysis and database design.</li>
+                            <li>Write unit tests for each feature.</li>
+                            <li>Work with the front-end department to unify the APIs.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Technical used:</span>
+                          <ul>
+                            <li>Nodejs, Nextjs, GraphQL, TypeScript, CROD, MongoDB, Jest.</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <span class="title">Participation time:</span> <span>8 months.</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </details>
                 </div>
-              </div>
+              </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>

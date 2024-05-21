@@ -1,58 +1,32 @@
+@import ./mixin
+@import ./fn
+
 $main-color-darker: #2C3333
 $main-color-dark: #2E4F4F
 $main-color: #0E8388
 $main-color-light: #CBE4DE
-
-$screen-xs-min: 460px
-$screen-sm-min: 640px
-$screen-md-min: 768px
-$screen-lg-min: 1024px
-$screen-xl-min: 1280px
-$screen-xxl-min: 1537px
-
-
-@mixin xs
-  @media (min-width: #{$screen-xs-min}) 
-    @content
-
-@mixin sm 
-  @media (min-width: #{$screen-sm-min}) 
-    @content
-
-@mixin md
-  @media (min-width: #{$screen-md-min}) 
-    @content
-
-@mixin lg
-  @media (min-width: #{$screen-lg-min}) 
-    @content
-
-@mixin xl
-  @media (min-width: #{$screen-xl-min}) 
-    @content
-
-@mixin xxl
-  @media (min-width: #{$screen-xxl-min}) 
-    @content
 
 body,
 * 
   box-sizing: border-box
   margin: 0
   padding: 0
-  // font-family: "Space Grotesk", sans-serif
-  // font-family: "Josefin Slab", serif
   font-family:  "Kode Mono", monospace
-body 
-  height: 100vh
-  width: 100vw
 
 a 
   text-decoration: none
   color: currentcolor
 
+main
+  background: $main-color-darker
+  height: auto
+  min-width: 350px
+  @include lg
+    height: 100vh
+
 .container
-  margin: 0 auto
+  margin: auto
+  display: flex
   @include xs
     max-width: $screen-xs-min
   @include sm
@@ -61,41 +35,43 @@ a
     max-width: $screen-md-min
   @include lg
     max-width: $screen-lg-min
+    height: 100%
+    align-items: center
   @include xl
     max-width: $screen-xl-min
   @include xxl
     max-width: $screen-xxl-min
-
-main
-  background: $main-color-darker
 
 .main-view 
   padding: 1rem
   display: flex
   flex-direction: column
   gap: 1rem
+  padding: 25px 1rem
   &::-webkit-scrollbar
     width: 5px
     background: $main-color
   &::-webkit-scrollbar-thumb
     background-color: $main-color-light
     border-radius: 1rem 
+
   @include lg
     height: 100vh
+    max-height: 640px
     display: grid
     grid-template-columns: repeat(11, minmax(0, 1fr))
     align-items: center
+    justify-content: center
+  @include xl
+    max-height: 800px
+
 
 .left-content 
   perspective: 32rem
   height: 750px
   grid-column: span 4/ span 4
-  @include sm
-    height: 850px
-  @include sm
-    height: 1000px
   @include lg
-    height: 750px
+    height: 100%
   .content
     background: $main-color-light
     height: 100%
@@ -104,23 +80,32 @@ main
     transform-style: preserve-3d
     display: flex
     flex-direction: column
-    box-shadow: 10px 10px 18px 0px $main-color
-    -webkit-box-shadow: 10px 10px 18px 0px $main-color
-    -moz-box-shadow: 10px 10px 18px 0px $main-color
+    box-shadow:  0px 5px 10px 0px $main-color
+    -webkit-box-shadow:  0px 5px 10px 0px $main-color
+    -moz-box-shadow:  0px 5px 10px 0px $main-color
+    @include sm
+      flex-direction: row
     @include lg
       transform: rotateY(5deg) translateX(15px)
-    .avatar
-      background: url(../assets/avatar.webp) bottom no-repeat
-      background-size: cover
-      height: 75%
-    .info
-      color: $main-color
-      text-align: center
+      flex-direction: column
+    .top-content
+      flex: 1
       display: flex
       flex-direction: column
-      justify-content: space-between
-      flex: 1
+      @include xs
+        height: 100%
+      .avatar
+        background: url(../assets/avatar2.png) center no-repeat
+        background-size: cover
+        flex: 1
       .top
+        color: $main-color
+        text-align: center
+        display: none
+        @include sm
+          display: block
+        @include lg
+          display: none
         .name
           font-weight: bold
         .position
@@ -128,65 +113,106 @@ main
           font-size: 1.3rem
         .contact-list
           font-size: 2.5rem
+    .info
+      color: $main-color
+      text-align: center
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      .top
+        @include sm
+          display: none
+        @include lg
+          display: block
+        .name
+          font-weight: bold
+        .position
+          font-weight: lighter
+          font-size: 1.3rem
+        .contact-list
+          font-size: 2.5rem
+          display: flex 
+          justify-content: center
+          a
+            display: flex
+            height: fit-content
+            width: fit-content
+            padding: 0.5rem
+            border-radius: 2.5rem
+            transition: all 0.5s
+            &:hover
+              background: $main-color
+              color: $main-color-light
+              cursor: pointer
       .bottom
         display: grid
         grid-template-columns: repeat(1, minmax(0,1fr))
         @include sm
-          grid-template-columns: repeat(2, minmax(0,1fr))
+          writing-mode: vertical-rl
+          height: 100%
         @include lg
           grid-template-columns: repeat(1, minmax(0,1fr))
+          height: auto
+          writing-mode: horizontal-tb
         @include xl
           grid-template-columns: repeat(2, minmax(0,1fr))
         font-size: 1.7rem
-        div
+        .button
           border: 1px solid
           padding: 1rem 0
           transition: background 0.5s
           &:hover
-            border: none
+            border-color: $main-color
             background: $main-color
             color: $main-color-light
             cursor: pointer
-        div:last-child
-          border-end-end-radius: 2rem
-          border-end-start-radius: 2rem
+        :last-child
+          border-radius: 0 0 2rem 2rem
         @include sm
-          div:first-child
-            border-end-start-radius: 2rem
-          div:last-child
-            border-end-start-radius: 0
+          :first-child
+            border-radius: 0 2rem 2rem 0
+          :last-child
+            border-radius: 0
+          .button
+            font-size: 2rem
+            padding: 0 1rem
         @include lg
-          div:first-child
-            border-end-start-radius: 0
-          div:last-child
-            border-end-start-radius: 2rem
+          :first-child
+            border-radius: 0
+          :last-child
+            border-radius: 0 0 2rem 2rem
+          .button
+            font-size: 1.3rem
+            padding: 0.8rem 0
         @include xl
-          div:first-child
-            border-end-start-radius: 2rem
-          div:last-child
-            border-end-start-radius: 0
-          font-size: 1.3rem
+          :first-child
+            border-radius: 0 0 0 2rem
+          :last-child
+            border-radius: 0 0 2rem 0
+          .button
+            font-size: 1.3rem
+            padding: 1.2rem 0
         @include xxl
-          font-size: 1.6rem
+          .button
+            font-size: 1.6rem
+            padding: 0.8rem 0
 
 .right-content 
   z-index: 10
-  position: relative
   background: $main-color-dark
   color: $main-color-light
   border-radius: 2rem
-  grid-column: span 6/ span 6
+  grid-column: span 7/ span 7
   overflow: hidden
-  box-shadow: 10px 10px 18px 0px $main-color
-  -webkit-box-shadow: 10px 10px 18px 0px $main-color
-  -moz-box-shadow: 10px 10px 18px 0px $main-color
-  @include lg 
-    height: 720px
-  section
+  box-shadow:  0px 5px 10px 0px $main-color
+  -webkit-box-shadow:  0px 5px 10px 0px $main-color
+  -moz-box-shadow:  0px 5px 10px 0px $main-color
+  height: 96%
+  .scoll-view
     overflow-x: height 
-    overflow-y: scroll
     height: 100%
     @include lg 
+      overflow-y: scroll
       &::-webkit-scrollbar
         width: 5px
         background: $main-color
@@ -194,17 +220,19 @@ main
         background-color: $main-color-light
         border-radius: 1rem 
     .view
+      line-height: 2rem
       padding: 1rem 1.5rem
+      .title-section
+        padding: 1rem 0
+        text-shadow: fnTextShadown($main-color,$main-color-dark,$main-color-darker)
       .about
+        p
+          // text-align: justify
         gap: 2rem
         display: grid
         grid-template-columns: repeat(1, minmax(0,1fr))
         @include md
           grid-template-columns: repeat(2, minmax(0,1fr))
-        .summary
-          p
-            text-align: justify
-            line-height: 1.5rem
         .skills
           display: flex
           flex-direction: column
@@ -248,6 +276,12 @@ main
               background: $main-color-light
         .company
           padding: 0.5rem 0
+        .projects
+          cursor: pointer
+          font-weight: bold
+          width: fit-content
+          &:hover
+            text-shadow: fnTextShadown($main-color,$main-color-dark,$main-color-darker)
         .company,.list-project,.project-info
           display: flex
           flex-direction: column
@@ -256,20 +290,23 @@ main
           .project-info
             border-bottom: 2px solid
             padding: 0.5rem 0
+            border-left: 4px  $main-color-light dashed
+            &>div
+              padding-left: 2rem
+              @include lg
+                padding-left: 4rem
             .name
-              font-size: 1.5rem
-              margin-left: 1rem
               font-size: 1.35rem
               display: list-item
-              @include lg
-                margin-left: 4rem
-              a
-                border-radius: 4rem
-                padding: 0.25rem 0.5rem
-                &:hover
+              width: fit-content  
+              border-radius: 4rem
+              padding: 0.25rem 0.5rem
+              margin-left: 2rem
+              &.name-link:hover
+                @include sm
                   color: $main-color
                   background: $main-color-light
-        .position,.projects,.list-project .project-info div
+        .position,.list-project .project-info div
           display: grid
             grid-template-columns: repeat(1, minmax(0,1fr))
           .title
