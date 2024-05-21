@@ -134,7 +134,7 @@ main {
   }
 }
 .left-content .content .top-content .avatar {
-  background: url(../assets/avatar2.png) center no-repeat;
+  background: url(../assets/avatar.webp) center no-repeat;
   background-size: cover;
   flex: 1;
 }
@@ -341,83 +341,88 @@ main {
 }
 .right-content .scoll-view .view .about .skills div {
   display: flex;
-  justify-content: space-between;
-  text-align: end;
+  flex-direction: column;
 }
 .right-content .scoll-view .view .about .skills div .title {
   font-weight: bold;
   background: #0E8388;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: #CBE4DE;
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
 }
 .right-content .scoll-view .view .about .skills img {
-  height: 150px;
+  margin-top: 1rem;
+  height: 105px;
 }
-.right-content .scoll-view .view .experiences .company-name {
+@media (min-width: 1280px) {
+  .right-content .scoll-view .view .about .skills img {
+    height: 150px;
+  }
+}
+.right-content .scoll-view .view .about .company-name {
   display: flex;
   justify-items: center;
   gap: 1rem;
 }
 @media (min-width: 768px) {
-  .right-content .scoll-view .view .experiences .company-name {
+  .right-content .scoll-view .view .about .company-name {
     margin-left: 4rem;
   }
 }
-.right-content .scoll-view .view .experiences .company-name a {
+.right-content .scoll-view .view .about .company-name a {
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.right-content .scoll-view .view .experiences .company-name img {
+.right-content .scoll-view .view .about .company-name img {
   height: 35px;
   width: 35px;
 }
-.right-content .scoll-view .view .experiences .company-name h3.name {
+.right-content .scoll-view .view .about .company-name h3.name {
   background-color: #0E8388;
   border-radius: 1rem;
   padding: 0.25rem 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
 }
-.right-content .scoll-view .view .experiences .company-name h3.name:hover {
+.right-content .scoll-view .view .about .company-name h3.name:hover {
   color: #0E8388;
   background: #CBE4DE;
 }
-.right-content .scoll-view .view .experiences .company {
+.right-content .scoll-view .view .about .company {
   padding: 0.5rem 0;
 }
-.right-content .scoll-view .view .experiences .projects {
+.right-content .scoll-view .view .about .projects {
   cursor: pointer;
   font-weight: bold;
   width: -moz-fit-content;
   width: fit-content;
 }
-.right-content .scoll-view .view .experiences .projects:hover {
+.right-content .scoll-view .view .about .projects:hover {
   text-shadow: 0 0 5px #0E8388, 0 0 15px #0E8388, 0 0 20px #0E8388, 0 0 40px #0E8388, 0 0 60px #2E4F4F, 0 0 10px #2C3333, 0 0 98px #2E4F4F;
 }
-.right-content .scoll-view .view .experiences .company, .right-content .scoll-view .view .experiences .list-project, .right-content .scoll-view .view .experiences .project-info {
+.right-content .scoll-view .view .about .company, .right-content .scoll-view .view .about .list-project, .right-content .scoll-view .view .about .project-info {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
 }
-.right-content .scoll-view .view .experiences .list-project .project-info {
+.right-content .scoll-view .view .about .list-project .project-info {
   border-bottom: 2px solid;
   padding: 0.5rem 0;
   border-left: 4px #CBE4DE dashed;
 }
-.right-content .scoll-view .view .experiences .list-project .project-info > div {
+.right-content .scoll-view .view .about .list-project .project-info > div {
   padding-left: 2rem;
 }
 @media (min-width: 1024px) {
-  .right-content .scoll-view .view .experiences .list-project .project-info > div {
+  .right-content .scoll-view .view .about .list-project .project-info > div {
     padding-left: 4rem;
   }
 }
-.right-content .scoll-view .view .experiences .list-project .project-info .name {
+.right-content .scoll-view .view .about .list-project .project-info .name {
   font-size: 1.35rem;
   display: list-item;
   width: -moz-fit-content;
@@ -427,31 +432,31 @@ main {
   margin-left: 2rem;
 }
 @media (min-width: 640px) {
-  .right-content .scoll-view .view .experiences .list-project .project-info .name.name-link:hover {
+  .right-content .scoll-view .view .about .list-project .project-info .name.name-link:hover {
     color: #0E8388;
     background: #CBE4DE;
   }
 }
-.right-content .scoll-view .view .experiences .position, .right-content .scoll-view .view .experiences .list-project .project-info div {
+.right-content .scoll-view .view .about .position, .right-content .scoll-view .view .about .list-project .project-info div {
   display: grid;
   display-grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.right-content .scoll-view .view .experiences .position .title, .right-content .scoll-view .view .experiences .list-project .project-info div .title {
+.right-content .scoll-view .view .about .position .title, .right-content .scoll-view .view .about .list-project .project-info div .title {
   font-weight: bold;
 }
-.right-content .scoll-view .view .experiences .position span:nth-child(2), .right-content .scoll-view .view .experiences .list-project .project-info div span:nth-child(2) {
+.right-content .scoll-view .view .about .position span:nth-child(2), .right-content .scoll-view .view .about .list-project .project-info div span:nth-child(2) {
   padding-left: 1rem;
 }
 @media (min-width: 1024px) {
-  .right-content .scoll-view .view .experiences .position span:nth-child(2), .right-content .scoll-view .view .experiences .list-project .project-info div span:nth-child(2) {
+  .right-content .scoll-view .view .about .position span:nth-child(2), .right-content .scoll-view .view .about .list-project .project-info div span:nth-child(2) {
     grid-column: span 3/span 3;
   }
 }
-.right-content .scoll-view .view .experiences .position ul, .right-content .scoll-view .view .experiences .list-project .project-info div ul {
+.right-content .scoll-view .view .about .position ul, .right-content .scoll-view .view .about .list-project .project-info div ul {
   padding-left: 2rem;
 }
 @media (min-width: 1537px) {
-  .right-content .scoll-view .view .experiences .position ul, .right-content .scoll-view .view .experiences .list-project .project-info div ul {
+  .right-content .scoll-view .view .about .position ul, .right-content .scoll-view .view .about .list-project .project-info div ul {
     grid-column: span 3/span 3;
   }
 }
