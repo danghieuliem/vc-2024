@@ -252,7 +252,7 @@ main
             height: 35px*3
             @include xl
               height: 50px*3
-        .experiences
+      .experiences
         .company-name
           display: flex
           justify-items: center
@@ -309,16 +309,16 @@ main
                   color: $main-color
                   background: $main-color-light
         .position,.list-project .project-info div
-          display: grid
-            grid-template-columns: repeat(1, minmax(0,1fr))
-          .title
-            font-weight: bold
-          span:nth-child(2)
-            padding-left: 1rem
-            @include lg
-              grid-column: span 3/ span 3
-          
-          ul
-            padding-left: 2rem
-            @include xxl
-              grid-column: span 3/ span 3
+            display: grid
+              grid-template-columns: repeat(1, minmax(0,1fr))
+            .title
+              font-weight: bold
+            span:nth-child(2)
+              padding-left: 1rem
+              @include lg
+                grid-column: span 3/ span 3
+            
+            ul
+              padding-left: 2rem
+              @include xxl
+                grid-column: span 3/ span 3
