@@ -20,9 +20,36 @@ a
 main
   background: $main-color-darker
   height: auto
+  position: relative
   min-width: 350px
   @include lg
     height: 100vh
+
+#main-bg
+  position: absolute
+  height: 100%
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-evenly
+  align-content: space-evenly
+  overflow: hidden
+  .el
+    border: 5px transparent solid
+    display: flex
+    flex-direction: column
+    justify-content: center
+    &::after
+      transition: color 1s, text-shadow 1s
+      color: transparent
+      text-align: center
+      content: '\2665'
+    &:hover
+      &::after
+        transition: color 0s
+        text-shadow: fnTextShadown($main-color,$main-color-dark,$main-color-darker)
+        color: $main-color-light
+
 
 .container
   margin: auto
@@ -273,6 +300,7 @@ main
             border-radius: 1rem
             padding: 0.25rem 0.5rem
             width: fit-content
+            transition: all 0.5s
             &:hover
               color: $main-color
               background: $main-color-light

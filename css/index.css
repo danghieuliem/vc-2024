@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body,
 * {
   box-sizing: border-box;
@@ -14,12 +15,41 @@ a {
 main {
   background: #2C3333;
   height: auto;
+  position: relative;
   min-width: 350px;
 }
 @media (min-width: 1024px) {
   main {
     height: 100vh;
   }
+}
+
+#main-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  overflow: hidden;
+}
+#main-bg .el {
+  border: 5px transparent solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#main-bg .el::after {
+  transition: color 1s, text-shadow 1s;
+  color: transparent;
+  text-align: center;
+  content: "♥";
+}
+#main-bg .el:hover::after {
+  transition: color 0s;
+  text-shadow: 0 0 5px #0E8388, 0 0 15px #0E8388, 0 0 20px #0E8388, 0 0 40px #0E8388, 0 0 60px #2E4F4F, 0 0 10px #2C3333, 0 0 98px #2E4F4F;
+  color: #CBE4DE;
 }
 
 .container {
@@ -387,6 +417,7 @@ main {
   padding: 0.25rem 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
+  transition: all 0.5s;
 }
 .right-content .scoll-view .view .experiences .company-name h3.name:hover {
   color: #0E8388;
