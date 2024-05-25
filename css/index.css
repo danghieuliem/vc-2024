@@ -1,10 +1,13 @@
-@charset "UTF-8";
+@font-face {
+  font-family: Kode_Mono;
+  src: url(../assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
+}
 body,
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Kode Mono", monospace;
+  font-family: Kode_Mono, monospace;
 }
 
 a {
@@ -24,6 +27,30 @@ main {
   }
 }
 
+#toggle-main-content {
+  position: absolute;
+  z-index: 10;
+  right: 1rem;
+  top: 1rem;
+  color: #CBE4DE;
+  font-size: 3rem;
+  text-shadow: 0 0 5px #2E4F4F, 0 0 15px #2E4F4F, 0 0 20px #2E4F4F, 0 0 40px #2E4F4F, 0 0 60px #2E4F4F, 0 0 10px #2C3333, 0 0 98px #2E4F4F;
+  cursor: pointer;
+  display: none;
+}
+#toggle-main-content:hover {
+  color: #0E8388;
+}
+@media (min-width: 1024px) {
+  #toggle-main-content {
+    display: block;
+  }
+}
+
+.display-none {
+  display: none !important;
+}
+
 #main-bg {
   position: absolute;
   height: 100%;
@@ -36,20 +63,25 @@ main {
 }
 #main-bg .el {
   border: 5px transparent solid;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-#main-bg .el::after {
-  transition: color 1s, text-shadow 1s;
-  color: transparent;
-  text-align: center;
-  content: "♥";
-}
-#main-bg .el:hover::after {
-  transition: color 0s;
-  text-shadow: 0 0 5px #0E8388, 0 0 15px #0E8388, 0 0 20px #0E8388, 0 0 40px #0E8388, 0 0 60px #2E4F4F, 0 0 10px #2C3333, 0 0 98px #2E4F4F;
-  color: #CBE4DE;
+@media (min-width: 1024px) {
+  #main-bg .el {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  }
+  #main-bg .el .child {
+    transition: color 1s, text-shadow 1s;
+    color: transparent;
+    text-align: center;
+  }
+  #main-bg .el:hover .child {
+    transition: color 0s;
+    text-align: center;
+    text-shadow: 0 0 5px #0E8388, 0 0 15px #0E8388, 0 0 20px #0E8388, 0 0 40px #0E8388, 0 0 60px #2E4F4F, 0 0 10px #2C3333, 0 0 98px #2E4F4F;
+    color: #CBE4DE;
+  }
 }
 
 .container {
@@ -318,6 +350,7 @@ main {
 }
 
 .right-content {
+  opacity: 0.95;
   z-index: 10;
   background: #2E4F4F;
   color: #CBE4DE;
@@ -358,6 +391,9 @@ main {
   gap: 2rem;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.right-content .scoll-view .view .about p {
+  text-align: justify;
 }
 @media (min-width: 768px) {
   .right-content .scoll-view .view .about {

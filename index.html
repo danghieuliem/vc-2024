@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dang Hieu liem (Lain)</title>
+
   <link rel="stylesheet" href="./css/index.min.css">
   <link rel="stylesheet" href="./css/fontawesome.min.css" />
   <link rel="stylesheet" href="./css/fontawesome-brands.min.css" />
@@ -12,10 +13,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Kode+Mono:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap"
-    rel="stylesheet">
-
 
   <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.ico">
 
@@ -32,8 +29,9 @@
 <body>
   <header></header>
   <main>
+    <div id="toggle-main-content"><i class="fa-solid fa-square-minus"></i></div>
     <div id="main-bg"></div>
-    <div class="container">
+    <div id="main-content" class="container">
       <div class="main-view">
         <div class="left-content">
           <div class="content">
@@ -115,9 +113,9 @@
               <section class="experiences">
                 <div class="company">
                   <div class="company-name">
-                    <a href="http://mona.software" aria-label="Link to monamedia website"><img
+                    <a target="_blank" href="http://mona.software" aria-label="Link to monamedia website"><img
                         src="./assets/mona-icon.png" alt="mona media"></a>
-                    <a href="http://mona.software" aria-label="Link to monamedia website">
+                    <a target="_blank" href="http://mona.software" aria-label="Link to monamedia website">
                       <h3 class="name">
                         Mona software
                         <span>- (08/2023-Present)</span>
@@ -269,9 +267,9 @@
                 </div>
                 <div class="company">
                   <div class="company-name">
-                    <a href="https://troodonlabs.com/" aria-label="Link to TroodonLabs homepage"><img
+                    <a target="_blank" href="https://troodonlabs.com/" aria-label="Link to TroodonLabs homepage"><img
                         src="./assets/troodon-icon.png" alt="TroodonLabs"></a>
-                    <a href="https://troodonlabs.com/" aria-label="Link to TroodonLabs homepage">
+                    <a target="_blank" href="https://troodonlabs.com/" aria-label="Link to TroodonLabs homepage">
                       <h3 class="name">
                         TroodonLabs company - (12/2021-06/2023)
                       </h3>
@@ -428,8 +426,8 @@
                 </div>
                 <div class="company">
                   <div class="company-name">
-                    <a href="https://kmin.edu.vn/"><img src="./assets/kmin-icon.png" alt="kmin"></a>
-                    <a href="https://kmin.edu.vn/">
+                    <a target="_blank" href="https://kmin.edu.vn/"><img src="./assets/kmin-icon.png" alt="kmin"></a>
+                    <a target="_blank" href="https://kmin.edu.vn/">
                       <h3 class="name">
                         Kmin academy - (04/2021-12/2021)
                       </h3>
@@ -487,7 +485,7 @@
     </div>
   </main>
 
-  <script src="./libs/anime.min.js"></script>
+  <script defer src="./libs/anime.min.js"></script>
   <script defer src="./js/index.js"></script>
 </body>
 

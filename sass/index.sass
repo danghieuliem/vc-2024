@@ -6,12 +6,17 @@ $main-color-dark: #2E4F4F
 $main-color: #0E8388
 $main-color-light: #CBE4DE
 
+@font-face 
+  font-family: Kode_Mono
+  src: url(../assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf)
+
+
 body,
 * 
   box-sizing: border-box
   margin: 0
   padding: 0
-  font-family:  "Kode Mono", monospace
+  font-family: Kode_Mono , monospace
 
 a 
   text-decoration: none
@@ -25,6 +30,25 @@ main
   @include lg
     height: 100vh
 
+#toggle-main-content
+  position: absolute
+  z-index: 10
+  right: 1rem
+  top: 1rem
+  color: $main-color-light
+  font-size: 3rem
+  text-shadow: fnTextShadown($main-color-dark,$main-color-dark,$main-color-darker)
+  cursor: pointer
+  display: none
+  &:hover
+    color: $main-color
+  @include lg
+    display: block
+
+.display-none
+  display: none !important
+
+
 #main-bg
   position: absolute
   height: 100%
@@ -36,20 +60,21 @@ main
   overflow: hidden
   .el
     border: 5px transparent solid
-    display: flex
-    flex-direction: column
-    justify-content: center
-    &::after
-      transition: color 1s, text-shadow 1s
-      color: transparent
-      text-align: center
-      content: '\2665'
-    &:hover
-      &::after
-        transition: color 0s
-        text-shadow: fnTextShadown($main-color,$main-color-dark,$main-color-darker)
-        color: $main-color-light
-
+    @include lg
+      display: flex
+      flex-direction: column
+      justify-content: center
+      cursor: pointer
+      & .child
+        transition: color 1s, text-shadow 1s
+        color: transparent
+        text-align: center
+      &:hover
+        & .child
+          transition: color 0s
+          text-align: center
+          text-shadow: fnTextShadown($main-color,$main-color-dark,$main-color-darker)
+          color: $main-color-light
 
 .container
   margin: auto
@@ -224,7 +249,8 @@ main
             font-size: 1.6rem
             padding: 0.8rem 0
 
-.right-content 
+.right-content
+  opacity: 0.95
   z-index: 10
   background: $main-color-dark
   color: $main-color-light
@@ -254,7 +280,7 @@ main
         text-shadow: fnTextShadown($main-color,$main-color-dark,$main-color-darker)
       .about
         p
-          // text-align: justify
+          text-align: justify
         gap: 2rem
         display: grid
         grid-template-columns: repeat(1, minmax(0,1fr))
