@@ -199,6 +199,17 @@ main {
   background: url(../assets/avatar.webp) center no-repeat;
   background-size: cover;
   flex: 1;
+  min-height: 26rem;
+}
+@media (min-width: 640px) {
+  .left-content .content .top-content .avatar {
+    min-height: 38rem;
+  }
+}
+@media (min-width: 1024px) {
+  .left-content .content .top-content .avatar {
+    min-height: auto;
+  }
 }
 .left-content .content .top-content .top {
   color: #0E8388;
@@ -272,6 +283,7 @@ main {
 .left-content .content .info .bottom {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
+  flex: 1;
   font-size: 1.7rem;
 }
 @media (min-width: 640px) {

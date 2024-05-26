@@ -150,6 +150,11 @@ main
         background: url(../assets/avatar.webp) center no-repeat
         background-size: cover
         flex: 1
+        min-height: 26rem
+        @include sm 
+          min-height: 38rem
+        @include lg 
+          min-height: auto
       .top
         color: $main-color
         text-align: center
@@ -199,6 +204,7 @@ main
       .bottom
         display: grid
         grid-template-columns: repeat(1, minmax(0,1fr))
+        flex: 1
         @include sm
           writing-mode: vertical-rl
           height: 100%
