@@ -97,6 +97,45 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "fa-solid fa-square-caret-down"
       : "fa-solid fa-square-minus";
   });
+
+  const leftContent = document.querySelector(".left-content");
+  anime
+    .timeline({
+      easing: "easeInOutSine",
+    })
+    .add({
+      targets: [".left-content .content"],
+      // rotateY: {
+      //   value: 5,
+      //   duration: 400,
+      // },
+      // loop: true,
+      // begin: function (anim) {
+      //   leftContent.style.perspective = "100rem";
+      //   document.querySelector(".left-content .content").style.rotateY = -360;
+      // },
+      // update: function (anim) {
+      //   if (anim.progress > 95)
+      //     leftContent.style.perspective =
+      //       100 - (anim.progress / 100) * (100 - 32) + "rem";
+      // },
+    })
+    .add({
+      targets: [".left-content .content"],
+      scale: [
+        { value: 1.1, duration: 300 },
+        { value: 1, duration: 200, delay: 600 },
+      ],
+      rotateY: [
+        { value: 10, duration: 100, delay: 400 },
+        { value: -10, duration: 100, delay: 100 },
+        { value: 5, duration: 300, delay: 100 },
+      ],
+      update: function (anim) {
+        leftContent.style.perspective =
+          100 - (anim.progress / 100) * (100 - 20) + "rem";
+      },
+    });
 });
 
 const debounce = (func, timeout = 300) => {
